@@ -1,3 +1,7 @@
 export default {
-    currenCategory:{name:"İçecekler"}
-}
+  currentCategory: {},
+  categories: [],
+  products: [],
+  cart: [],
+  savedProduct: {},
+};
