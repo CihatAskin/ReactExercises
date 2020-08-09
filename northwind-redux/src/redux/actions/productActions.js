@@ -13,12 +13,13 @@ export function updateProductSuccess(products) {
 }
 
 export function saveProductApi(product) {
-  return fetch("http://localhost:3000/product/" + (product.id || ""), {
+  console.log("123 product", product);
+  return fetch("http://localhost:3000/products/" + (product.id || ""), {
     method: product.id ? "PUT" : "POST",
     header: { "content-type": "application/json" },
     body: JSON.stringify(product),
   })
-    .then(handleReponse)
+    .then(handleResponse)
     .catch(handleError);
 }
 
@@ -36,7 +37,7 @@ export function saveProduct(product) {
   };
 }
 
-export async function handleReponse(response) {
+export async function handleResponse(response) {
   if (response.ok) {
     return response.json();
   }
